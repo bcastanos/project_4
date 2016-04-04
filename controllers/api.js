@@ -12,7 +12,7 @@ module.exports = {
   create: function(req, res){
     User.create(req.body, function(err, user){
       if(err) return console.log(err)
-      res.json({success:true, message: "User created!"})
+      res.json({success:true, message: "User created!", user: user})
     })
   },
 

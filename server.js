@@ -7,7 +7,7 @@ var
   , mongoose = require('mongoose')
   , apiRoutes = require('./routes/api.js')
   , jwt = require('jsonwebtoken')
-  , config = require('/config')
+  , config = require('./config.js')
 
 mongoose.connect('mongodb://localhost/threads', function(err){
   if(err) console.log("Error connecting")
