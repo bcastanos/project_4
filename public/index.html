@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <script src="/js/angular.js" charset="utf-8"></script>
+    <script src="/js/angular-ui-router.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <script src="/js/mainCtrl.js" charset="utf-8"></script>
+    <script src="/js/userService.js" charset="utf-8"></script>
+
+  </head>
+  <body ng-app="threadApp">
+    <nav>
+      <div class="nav-wrapper blue-grey darken-3">
+       <a href="#" class="brand-logo">Threads</a>
+         <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <li><a ui-sref="home">Home</a></li>
+           <li><a ui-sref="users">Users</a></li>
+           <li><a ui-sref="signup">Create Users</a></li>
+         </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div ui-view></div>
+    </div>
+
+
+  </body>
+</html>

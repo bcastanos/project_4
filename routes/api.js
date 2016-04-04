@@ -1,6 +1,17 @@
 var
   express = require('express')
-  , api = express.Router()
+  , apiRouter = express.Router()
+  , apiCtrl = require('../controllers/api.js')
 
 
-module.exports = api
+
+apiRouter.route('/users')
+  .get(apiCtrl.index)
+  .post(apiCtrl.create)
+
+apiRouter.route('/users/:id')
+  .get(apiCtrl.show)
+  .patch(apiCtrl.update)
+  .delete(apiCtrl.delete)
+
+module.exports = apiRouter
