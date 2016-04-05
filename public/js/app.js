@@ -8,6 +8,11 @@
           url: '/',
           templateUrl: 'partials/home.html'
         })
+        .state('mens-shoes-athletic', {
+          url: '/mens-shoes-athletic',
+          templateUrl: 'partials/mens-shoes-athletic.html',
+          controller: 'MainController as main'
+        })
         .state('users', {
           url: '/users',
           templateUrl: 'partials/users.html',

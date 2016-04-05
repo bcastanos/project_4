@@ -2,15 +2,20 @@
   angular.module('threadApp')
     .controller('MainController', MainController)
 
-    MainController.$inject = ['userService', '$state']
+    MainController.$inject = ['userService', 'clothesService', '$state']
 
-    function MainController(userService, $state){
+    function MainController(userService, clothesService, $state){
       var vm = this
       vm.title = 'Main Controller'
       vm.newUser = {}
 
       userService.index().success(function(results){
         vm.users = results
+      })
+
+      clothesService.index().success(function(results){
+        console.log(results)
+        vm.allItems = results.products
       })
 
       vm.create = function(){

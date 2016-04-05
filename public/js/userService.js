@@ -1,6 +1,7 @@
 (function(){
   angular.module('threadApp')
     .factory('userService', userService)
+    .factory('clothesService', clothesService)
 
     userService.$inject = ['$http']
 
@@ -37,5 +38,20 @@
       }
     }
 
+    clothesService.$inject = ['$http']
+
+    function clothesService($http){
+      var service = {
+        index: index
+      }
+
+      return service
+
+
+    function index(){
+      console.log("Getting all clothes")
+      return $http.get('http://api.shopstyle.com/api/v2/products?pid=uid3481-2375059-12&cat=mens-shoes-athletic&offset=0&limit=50')
+    }
+  }
 
 })()
