@@ -12,7 +12,7 @@ var
 // mongoose.connect('mongodb://localhost/threads', function(err){
 //   if(err) console.log("Error connecting")
 //   console.log("Connected to mongo db threads")
-})
+// })
 
 app.set('superSecret', config.secret)
 
