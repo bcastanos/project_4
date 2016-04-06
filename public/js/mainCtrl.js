@@ -13,9 +13,19 @@
         vm.users = results
       })
 
-      clothesService.index().success(function(results){
+      clothesService.kicks().success(function(results){
         console.log(results)
-        vm.allItems = results.products
+        vm.allKicks = results.products
+      })
+
+      clothesService.shades().success(function(results){
+        console.log(results)
+        vm.allShades = results.products
+      })
+
+      clothesService.shirts().success(function(results){
+        console.log(results)
+        vm.allShirts = results.products
       })
 
       vm.create = function(){

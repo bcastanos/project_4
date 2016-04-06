@@ -42,16 +42,31 @@
 
     function clothesService($http){
       var service = {
-        index: index
+        kicks: kicks,
+        shades: shades,
+        shirts: shirts
       }
 
       return service
 
 
-    function index(){
-      console.log("Getting all clothes")
+    function kicks(){
+      console.log("Getting all kicks")
       return $http.get('http://api.shopstyle.com/api/v2/products?pid=uid3481-2375059-12&cat=mens-shoes-athletic&offset=0&limit=50')
     }
+
+    function shades(){
+      console.log("Getting all shades")
+      return $http.get('http://api.shopstyle.com/api/v2/products?pid=uid3481-2375059-12&fts=mens+eyewear&offset=0&limit=50')
+    }
+
+    function shirts(){
+      console.log("Getting all shirts")
+      return $http.get('http://api.shopstyle.com/api/v2/products?pid=uid3481-2375059-12&fts=mens+athletic+shirts&offset=0&limit=50')
+    }
+
+
+
   }
 
 })()

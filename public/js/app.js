@@ -13,6 +13,16 @@
           templateUrl: 'partials/mens-shoes-athletic.html',
           controller: 'MainController as main'
         })
+        .state('mens-eyewear', {
+          url: '/mens-eyewear',
+          templateUrl: 'partials/mens-eyewear.html',
+          controller: 'MainController as main'
+        })
+        .state('mens-shirts', {
+          url: '/mens-shirts',
+          templateUrl: 'partials/mens-shirts.html',
+          controller: 'MainController as main'
+        })
         .state('users', {
           url: '/users',
           templateUrl: 'partials/users.html',

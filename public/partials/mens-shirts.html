@@ -1,11 +1,11 @@
 <div class="container">
 
-  <h1 class="center-align">Men's Athletic Shoes</h1>
+<h1 class="center-align">Men's Shirts</h1>
 
-  <div class="row">
+<div class="row">
 
 
-    <div class="card" ng-repeat="c in main.allKicks" style="max-width: 200px; display: inline-block; max-height: 400px; margin-right: 7px">
+    <div class="card" ng-repeat="c in main.allShirts" style="max-width: 200px; display: inline-block; max-height: 400px; margin-right: 7px">
       <div class="card-image" style="height:150px">
           <a href="{{c.clickUrl}}"><img style="width: 100%; height: auto; max-height:100%; cursor:pointer" ng-src="{{c.image.sizes.Best.url}}"></a>
       </div>
@@ -14,10 +14,10 @@
         <p>{{c.priceLabel}}</p>
       </div>
       <div class="card-action">
-        <a href="{{c.clickUrl}}">Buy</a>
-        <i class="small material-icons">star_border</i>
+        <a href="{{c.clickUrl}}">Buy This Product!</a>
       </div>
     </div>
 
-  </div> <!--end row -->
+
+</div> <!--end row -->
 </div>
