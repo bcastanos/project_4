@@ -9,6 +9,9 @@ var
   , jwt = require('jsonwebtoken')
   , config = require('./config.js')
 
+  // ENVIRONMENT PORT
+  var port = process.env.PORT || 3000
+
 // mongoose.connect('mongodb://localhost/threads', function(err){
 //   if(err) console.log("Error connecting")
 //   console.log("Connected to mongo db threads")
@@ -27,6 +30,6 @@ app.get('/', function(req,res){
 
 app.use ('/api', apiRoutes)
 
-app.listen(3000, function(){
-  console.log("Server spinning on that 3k.")
+app.listen(port, function(){
+  console.log("Server spinning on ", port)
 })
