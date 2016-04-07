@@ -38,6 +38,10 @@
           templateUrl: 'partials/detail.html',
           controller: 'DetailController as detail'
         })
+        .state('login', {
+          url: '/login',
+          templateUrl: 'partials/login.html'
+        })
 
     })
 

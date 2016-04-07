@@ -5,25 +5,29 @@
     <title>Index Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Istok+Web:400,400italic' rel='stylesheet' type='text/css'>
+    <script src="/css/application.css" charset="utf-8"></script>
     <script src="/js/angular.js" charset="utf-8"></script>
     <script src="/js/angular-ui-router.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <script src="/js/globalCtrl.js" charset="utf-8"></script>
     <script src="/js/mainCtrl.js" charset="utf-8"></script>
     <script src="/js/detailCtrl.js" charset="utf-8"></script>
     <script src="/js/userService.js" charset="utf-8"></script>
 
   </head>
-  <body ng-app="threadApp">
+  <body ng-app="threadApp" ng-controller="GlobalController as global">
     <nav>
-      <div class="nav-wrapper blue-grey darken-3">
-       <a href="#" class="brand-logo">Threads</a>
+      <div class="nav-wrapper brown darken-4">
+       <a ui-sref="home" class="brand-logo">     Threads</a>
          <ul id="nav-mobile" class="right hide-on-med-and-down">
-           <li><a ui-sref="home">Home</a></li>
            <li><a ui-sref="users">Users</a></li>
-           <li><a ui-sref="signup">Create Users</a></li>
-           <li><a ui-sref="mens-shoes-athletic">Men's Shoes</a></li>
-           <li><a ui-sref="mens-eyewear">Men's Shades</a></li>
-           <li><a ui-sref="mens-shirts">Men's Shirts</a></li>
+           <li ng-if="!global.isAuthed()"><a ui-sref="signup">Sign Up</a></li>
+           <li ng-if="global.isAuthed()"><a ui-sref="mens-shoes-athletic">Men's Shoes</a></li>
+           <li ng-if="global.isAuthed()"><a ui-sref="mens-eyewear">Men's Shades</a></li>
+           <li ng-if="global.isAuthed()"><a ui-sref="mens-shirts">Men's Shirts</a></li>
+           <li ng-if="!global.isAuthed()"><a ui-sref="login">Log In</a></li>
+           <li ng-if="global.isAuthed()"><a ng-click="global.logout()">Log Out</a></li>
          </ul>
       </div>
     </nav>

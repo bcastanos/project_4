@@ -7,17 +7,18 @@ var
   , mongoose = require('mongoose')
   , apiRoutes = require('./routes/api.js')
   , jwt = require('jsonwebtoken')
+  , dotenv = require('dotenv').load({silent: true})
   , config = require('./config.js')
 
   // ENVIRONMENT PORT
   var port = process.env.PORT || 3000
 
-// mongoose.connect('mongodb://localhost/threads', function(err){
-//   if(err) console.log("Error connecting")
-//   console.log("Connected to mongo db threads")
-// })
+mongoose.connect('mongodb://localhost/threads-v2', function(err){
+  if(err) console.log("Error connecting")
+  console.log("Connected to mongo db threads")
+})
 
-app.set('superSecret', config.secret)
+app.set('superSecret', process.env.secret)
 
 app.use(logger('dev'))
 app.use(bodyParser.urlencoded({extended: false}))

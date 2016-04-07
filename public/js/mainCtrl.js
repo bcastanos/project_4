@@ -2,9 +2,9 @@
   angular.module('threadApp')
     .controller('MainController', MainController)
 
-    MainController.$inject = ['userService', 'clothesService', '$state']
+    MainController.$inject = ['userService', 'clothesService', '$state', '$http']
 
-    function MainController(userService, clothesService, $state){
+    function MainController(userService, clothesService, $state, $http){
       var vm = this
       vm.title = 'Main Controller'
       vm.newUser = {}
@@ -27,6 +27,25 @@
         console.log(results)
         vm.allShirts = results.products
       })
+
+      vm.favorite = function(shoe){
+        var selected = {
+          imgUrl: shoe.image.sizes.Best.url,
+          clickUrl: shoe.clickUrl,
+          brandedName: shoe.brandedName,
+          price: shoe.price,
+          description: shoe.description,
+          email: localStorage.email
+        }
+        $http({
+          method : "post",
+          url: "/api/fav",
+          data: selected
+        }).then(function(res){
+          console.log(res)
+        })
+
+      }
 
       vm.create = function(){
         userService.create(vm.newUser).success(function(response){
