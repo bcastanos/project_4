@@ -12,6 +12,7 @@
         show: show,
         create: create,
         update: update,
+        favorites: favorites,
         destroy: destroy
       }
       return service
@@ -23,6 +24,12 @@
 
       function show(id){
         return $http.get(apiUrl + id)
+      }
+
+      function favorites(id){
+        console.log("Getting my favorites")
+        return
+        $http.get(apiUrl + id)
       }
 
       function create(data){

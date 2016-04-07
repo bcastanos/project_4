@@ -28,6 +28,11 @@
           templateUrl: 'partials/users.html',
           controller: 'MainController as main'
         })
+        .state('mythreads', {
+          url: '/mythreads',
+          templateUrl: 'partials/mythreads.html',
+          controller: 'MainController as main'
+        })
         .state('signup', {
           url: '/users/new',
           templateUrl: 'partials/signup.html',

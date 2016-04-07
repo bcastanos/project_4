@@ -31,11 +31,22 @@ module.exports = {
 
 	// show specific user
 	show: function(req,res){
-		User.findOne({_id: req.params.id}, 'email name', function(err, user){
+		User.findOne({_id: req.params.id}, 'email name favorites', function(err, user){
 			if(err) return console.log(err)
 			res.json(user)
-		})
+		}).populate('favorites')
 	},
+
+	// show: function(req,res){
+	// 	User
+	// 		.findOne({_id: req.params.id}, 'email name favorites')
+	// 		.populate('favorites')
+	// 		.exec(function(err, user){
+	// 			if(err) console.log(err)
+	// 			console.log(user.favorites[0])
+	// 		})
+	//
+	// },
 
 	// update a user
 	update: function(req,res){
@@ -59,11 +70,17 @@ module.exports = {
     Product.create(req.body, function(err, product){
       if(err) console.log(err)
       console.log(product._id)
-      console.log()
       res.json({message: "You favorited a shoe.", product: product})
-      User.findOneAndUpdate({ email: req.body.email}, {$push: {favorites: product._id}}, {upsert:true, new: true}, function(err, model){
-        if(err) console.log(err)
-      })
+
+			User.findOneAndUpdate(
+				{email: req.body.email},
+				{$push: {"favorites": product._id}},
+				{upsert:true, new: true},
+					function(err, user){
+        		if(err) console.log(err)
+
+						// res.json({message: "saved.", user:user})
+				})
 
     })
 

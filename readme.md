@@ -41,6 +41,6 @@ Threads is a web app built on the mean stack that enables a user to explore a se
 |DELETE|profile/:id|Deletes user.|
 
 # Major Hurdles/Unsolved Problems
-
+A major hurdle that I encountered was relating the models with each other to provide a rich user experience. 
 
 # Working App

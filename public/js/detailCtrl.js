@@ -9,14 +9,16 @@
     vm.title = "Detail Controller"
 
     userService.show($stateParams.id).success(function(results){
-      vm.user = results
-    })
+        vm.user = results
+        console.log(results)
+      })
 
     vm.edit = function(){
       vm.editing = true
       vm.editingUser = {
         name: vm.user.name,
-        email: vm.user.email
+        email: vm.user.email,
+        favorites: vm.user.favorites[0]
       }
     }
 

@@ -1,0 +1,21 @@
+<h1 class="center-align">My Favorites</h1>
+
+<div class="row">
+
+
+  <div class="card" ng-repeat="c in main.allKicks" style="max-width: 200px; display: inline-block; max-height: 400px; margin-right: 7px">
+    <div class="card-image" style="height:150px">
+        <a href="{{c.clickUrl}}"><img style="width: 100%; height: auto; max-height:100%; cursor:pointer" ng-src="{{c.image.sizes.Best.url}}"></a>
+    </div>
+    <div class="card-content">
+      <p>{{c.brandedName}}</p>
+      <p>{{c.priceLabel}}</p>
+    </div>
+    <div class="card-action">
+      <a href="{{c.clickUrl}}">Buy</a>
+      <i class="small material-icons">star_border</i>
+      <button ng-click="main.favorite(c)">FAV</button>
+    </div>
+  </div>
+
+</div> <!--end row -->
