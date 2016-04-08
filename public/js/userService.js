@@ -2,6 +2,7 @@
   angular.module('threadApp')
     .factory('userService', userService)
     .factory('clothesService', clothesService)
+    .factory('blogService', blogService)
 
     userService.$inject = ['$http']
 
@@ -42,6 +43,20 @@
 
       function destroy(id){
         return $http.delete(apiUrl + id)
+      }
+    }
+
+    blogService.$inject = ['$http']
+
+    function blogService($http){
+      var service = {
+        blog: blog
+      }
+
+      return service
+
+      function blog(data){
+        return $http.post('/api/blog', data)
       }
     }
 

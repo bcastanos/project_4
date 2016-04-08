@@ -16,6 +16,8 @@ apiRouter.route('/fav')
 apiRouter.route('/fav/:id')
   .delete(apiCtrl.unfavorite)
 
+  apiRouter.route('/blog')
+    .post(apiCtrl.blog)
 
 apiRouter.use(apiCtrl.protect)
 
@@ -23,6 +25,9 @@ apiRouter.route('/users/:id')
   .get(apiCtrl.show)
   .patch(apiCtrl.update)
   .delete(apiCtrl.delete)
+
+
+
 
 
 

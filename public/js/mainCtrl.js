@@ -2,12 +2,13 @@
   angular.module('threadApp')
     .controller('MainController', MainController)
 
-    MainController.$inject = ['userService', 'clothesService', '$state', '$http']
+    MainController.$inject = ['userService', 'clothesService', 'blogService', '$state', '$http']
 
-    function MainController(userService, clothesService, $state, $http){
+    function MainController(userService, clothesService, blogService, $state, $http){
       var vm = this
       vm.title = 'Main Controller'
       vm.newUser = {}
+      vm.newBlog = {}
 
       userService.index().success(function(results){
         vm.users = results
@@ -51,6 +52,13 @@
         userService.create(vm.newUser).success(function(response){
           console.log(response)
           $state.go('login')
+        })
+      }
+
+      vm.blog = function(){
+        blogService.create(vm.newBlog).success(function(response){
+          console.log(response)
+          $state.go('home')
         })
       }
 

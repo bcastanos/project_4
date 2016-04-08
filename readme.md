@@ -18,6 +18,8 @@ Threads is a web app built on the mean stack that enables a user to explore a se
 
 # Wireframe
 
+[Frame 1](http://imgur.com/8mr7Yi8)
+[Frame 2](http://imgur.com/lCuAHSb)
 
 # Trello
 
@@ -42,8 +44,7 @@ To get the items and their information I used the shopstyle api.
 |GET|api/fav|Displays all favorited items, stored in the database.|
 |POST|api/fav|Favorites an item for a user.|
 |DELETE|api/fav/:id|Unfavorites(deletes) a favorite.|
-|GET|/update|Takes user to update page.|
-|PATCH|/profile/:id|Updates user information.|
+|PATCH|profile/:id|Updates user information.|
 |DELETE|profile/:id|Deletes user.|
 
 # Major Hurdles/Unsolved Problems
@@ -51,3 +52,5 @@ To get the items and their information I used the shopstyle api.
 Angular responsive functionality proved to be a bit more challenging than I envisioned.
 
 # Working App
+
+[Threads](http://thread-co.herokuapp.com/)

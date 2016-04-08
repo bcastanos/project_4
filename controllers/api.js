@@ -1,6 +1,7 @@
 var
 	User = require('../models/User.js'),
   Product = require('../models/Product.js'),
+  Blog = require('../models/Blog.js'),
 	jwt = require('jsonwebtoken')
 
 module.exports = {
@@ -101,6 +102,15 @@ module.exports = {
     })
 
   },
+
+	blog: function(req,res){
+		var newBlog = new Blog(req.body)
+		newBlog.save(function(err, post){
+			if(err) return console.log(err)
+			res.json({success: true, message: "Blog post created!", post: post})
+		})
+	},
+
 
 	authenticate: function(req,res){
 		User.findOne({email: req.body.email}, function(err, user){
