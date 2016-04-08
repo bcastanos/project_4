@@ -14,8 +14,8 @@ var
   var port = process.env.PORT || 3000
 
   // DATABASE
-var dbURL = 'mongodb://' + process.env.MLAB_USERNAME + ':' + process.env.MLAB_PASSWORD + '@ds019950.mlab.com:19950/threads'
-// var dbURL = 'mongodb://localhost/threads-v2'
+// var dbURL = 'mongodb://' + process.env.MLAB_USERNAME + ':' + process.env.MLAB_PASSWORD + '@ds019950.mlab.com:19950/threads'
+var dbURL = 'mongodb://localhost/threads-v2'
 
 
 mongoose.connect(dbURL, function(err){

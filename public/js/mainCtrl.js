@@ -50,7 +50,7 @@
       vm.create = function(){
         userService.create(vm.newUser).success(function(response){
           console.log(response)
-          $state.go('detail', {id: response.user._id})
+          $state.go('login')
         })
       }
 

@@ -71,9 +71,8 @@ module.exports = {
 		})
 	},
 
-	// delete a user
+	// delete a favorite
 	unfavorite: function(req,res){
-		console.log(req.params.id)
 		Product.findOneAndRemove({_id: req.params.id}, function(err){
 			if(err) return console.log(err)
 			res.json({success: true, message: "Favorite Deleted!"})
