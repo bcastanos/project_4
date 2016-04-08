@@ -18,8 +18,8 @@ Threads is a web app built on the mean stack that enables a user to explore a se
 
 # Wireframe
 
-[Frame 1](http://imgur.com/8mr7Yi8)
-[Frame 2](http://imgur.com/lCuAHSb)
+![Frame 1](http://imgur.com/8mr7Yi8.jpg)
+![Frame 2](http://imgur.com/lCuAHSb.jpg)
 
 # Trello
 
@@ -49,7 +49,7 @@ To get the items and their information I used the shopstyle api.
 
 # Major Hurdles/Unsolved Problems
 
-Angular responsive functionality proved to be a bit more challenging than I envisioned.
+Angular responsive functionality proved to be a bit more challenging than I envisioned. 
 
 # Working App
 
