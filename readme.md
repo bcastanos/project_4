@@ -2,6 +2,9 @@
 
 Threads is a web app built on the mean stack that enables a user to explore a set of items based on their tastes and interests.
 
+![snapshot](http://i.imgur.com/pi3gesK.png)
+
+
 # Technologies
 * Node
 * Angular
@@ -49,7 +52,7 @@ To get the items and their information I used the shopstyle api.
 
 # Major Hurdles/Unsolved Problems
 
-Angular responsive functionality proved to be a bit more challenging than I envisioned. 
+Angular responsive functionality proved to be a bit more challenging than I envisioned.
 
 # Working App
 
