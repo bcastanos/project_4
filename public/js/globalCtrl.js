@@ -37,7 +37,7 @@
         vm.login = function() {
             user.login(vm.loginUser.email, vm.loginUser.password)
                 .then(handleRequest, handleRequest)
-                .then($state.go('mythreads'))
+                .then($state.go('mens-shirts'))
         }
         vm.register = function() {
             user.register(vm.username, vm.password)
@@ -49,6 +49,7 @@
         }
         vm.logout = function() {
             auth.logout && auth.logout()
+
         }
         vm.isAuthed = function() {
             return auth.isAuthed ? auth.isAuthed() : false

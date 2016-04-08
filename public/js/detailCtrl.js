@@ -2,9 +2,9 @@
   angular.module('threadApp')
     .controller('DetailController', DetailController)
 
-    DetailController.$inject = ['userService', '$stateParams']
+    DetailController.$inject = ['userService', '$stateParams', '$http']
 
-  function DetailController(userService, $stateParams){
+  function DetailController(userService, $stateParams, $http){
     var vm = this
     vm.title = "Detail Controller"
 
@@ -20,6 +20,19 @@
         email: vm.user.email,
         favorites: vm.user.favorites[0]
       }
+    }
+
+    vm.unfavorite = function(product){
+      console.log(product)
+      var id = product._id
+      $http({
+        method : "delete",
+        url: "/api/fav/" + id
+
+      }).then(function(res){
+        console.log(res)
+      })
+
     }
 
     vm.update = function(){

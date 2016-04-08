@@ -1,11 +1,13 @@
 <div ng-if="!detail.editing">
-<h2> {{ detail.user.name }}</h2>
-<h3> {{ detail.user.email }}</h3>
+<h5>User Info</h5>
+<p> {{ detail.user.name }}</p>
+<p> {{ detail.user.email }}</p>
 <!-- <h3> {{ detail.user.favorites[0].clickUrl}} </h3> -->
 <!-- <p>  {{detail.user}}</p> -->
 <button ng-click="detail.edit()">Edit</button>
 
 <h1 class="center-align">My Favorites</h1>
+<h6 class="center-align"><a ui-sref="mens-eyewear">Men's Shades | </a><a ui-sref="mens-shirts">Men's Shirts | </a><a ui-sref="mens-shoes-athletic">Men's Sneakers</a></h6>
 
 <div class="row">
 
@@ -20,8 +22,7 @@
     </div>
     <div class="card-action">
       <a href="{{c.clickUrl}}">Buy</a>
-      <i class="small material-icons">star_border</i>
-      <button ng-click="main.favorite(c)">FAV</button>
+      <button ng-click="detail.unfavorite(c)">x</button>
     </div>
   </div>
 

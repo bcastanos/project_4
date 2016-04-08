@@ -64,6 +64,23 @@ module.exports = {
 		})
 	},
 
+	products: function(req,res){
+		Product.find({}, function(err, users){
+			if(err) return console.log(err)
+			res.json(users)
+		})
+	},
+
+	// delete a user
+	unfavorite: function(req,res){
+		console.log(req.params.id)
+		Product.findOneAndRemove({_id: req.params.id}, function(err){
+			if(err) return console.log(err)
+			res.json({success: true, message: "Favorite Deleted!"})
+		})
+	},
+
+
   fav: function(req, res){
     // User.findOne({email: req.body.email})
     console.log(req.body.email)

@@ -59,6 +59,8 @@
           vm.users.splice(index, 1)
         })
       }
+
+
     }
 
 })()

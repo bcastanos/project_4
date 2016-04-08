@@ -9,6 +9,14 @@ apiRouter.route('/users')
   .get(apiCtrl.index)
   .post(apiCtrl.create)
 
+apiRouter.route('/fav')
+  .get(apiCtrl.products)
+  .post(apiCtrl.fav)
+
+apiRouter.route('/fav/:id')
+  .delete(apiCtrl.unfavorite)
+
+
 apiRouter.use(apiCtrl.protect)
 
 apiRouter.route('/users/:id')
@@ -16,7 +24,6 @@ apiRouter.route('/users/:id')
   .patch(apiCtrl.update)
   .delete(apiCtrl.delete)
 
-apiRouter.route('/fav')
-  .post(apiCtrl.fav)
+
 
 module.exports = apiRouter
