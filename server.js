@@ -13,9 +13,14 @@ var
   // ENVIRONMENT PORT
   var port = process.env.PORT || 3000
 
-mongoose.connect('mongodb://localhost/threads-v2', function(err){
+  // DATABASE
+var dbURL = 'mongodb://' + process.env.MLAB_USERNAME + ':' + process.env.MLAB_PASSWORD + '@ds019950.mlab.com:19950/threads'
+// var dbURL = 'mongodb://localhost/threads-v2'
+
+
+mongoose.connect(dbURL, function(err){
   if(err) console.log("Error connecting")
-  console.log("Connected to mongo db threads")
+  console.log("Connected to: ", dbURL)
 })
 
 app.set('superSecret', process.env.secret)
